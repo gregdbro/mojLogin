@@ -28,5 +28,14 @@ npm i allure-commandline
 Change wdio.conf.js reporters to allure to the desired URL
 
 git init -b main
-git status
 
+Create a .gitignore file in the main directory of the project
+Add node_modules to it
+
+git status
+git add .
+git commit -m"Committing technical test for review"
+
+git remote add origin https://github.com/gregdbro/mojLogin.git
+git branch -M main
+git push -u origin main
