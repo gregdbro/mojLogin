@@ -1,0 +1,15 @@
+I chose to use WDIO as the framework, Cucumber as the BDD tool, and Allure as the reporter
+
+I chose WDIO as I knew from experience that it would be able to perform the necessary actions
+and do so in great time. Other frameworks like Cypress and Playwright may also be worth
+looking into.
+
+Cucumber was my BDD tool, as I know it intimately. It can easily be used alongside WDIO.
+
+I went with Allure as the reporter as Allure gives more visuals than the basic Spec reporter.
+A combination of reporters could also be used, dependent on who the target audience is.
+For example, during debugging, I would use spec. However, when displaying the results to
+higher management I would always use Allure. I feel it is easier to understand from a top down level
+whereas the developer will understand any issues from the command line.
+
+

@@ -1,0 +1,75 @@
+Test parallelization
+Not an issue when there are few test cases as the speed of the execution is quick.
+However, when there are hundreds or thousands of tests, it will be a good idea to run
+tests in parallel so that execution is quicker. Of course, we should make sure that the tests
+do not depend on each other for data as this could cause either bottle necks or false positives
+taking developers time to debug non issues.
+
+Strengthening the test cases
+When the user does not insert a username or password, there is an overlay.
+The test cases could be developed to check that the output message appears.
+
+Further testing
+Test login features with Facebook, Google, and LinkedIn
+Test Forgot Your Password to see if the user receives an email and can
+successfully reset their password
+Test full user creation journey by selecting Create an Account and then being able to login
+Test hyperlinks on the page
+
+Code refactoring
+Always keeping the DRY concept in mind, can we implement switch statements to vary what
+actions happen in the page object depending on what parameters are passed to them
+Some of the steps could be put into a common file, where actions that happen repeatedly
+can be executed differently by using different input parameters
+
+Code should be agnostic
+So that it can be executed on multiple Operating Systems (Linux, Windows, macOS)
+
+Cross browser testing
+Multiple browsers should be checked
+It is great to say that yes the tests are successful on Chrome, but are they successful
+on all other browsers such as Safari and Firefox
+
+Mobile testing
+As we are testing a web page, it will be accessible from the web
+Develop further tests to test from a mobile perspective
+
+Headless v head mode
+Headless mode uses less system resources than with "the head"
+Headless could be implemented when more test cases are implemented, or when no debugging is
+required.
+With good output comments in the terminal, perhaps the head mode is never required.
+
+Safety
+Within the feature file, a test password is visible to everyone with access to the repository
+This is not a good practice. It is safer to keep passwords in a secure vault, and request
+when necessary, rather than storing within the feature file
+
+Create a new session for each test case
+When using Scenario Outline, we use the same session. To create a stronger test case
+we should always begin as if it is an incognito session.
+
+Page object model
+As the project expands, feature files, step definitions, and page objects should be named
+in a better way providing a description of their contents
+
+Dynamic waits
+Dynamic waits are used throughout, meaning no fixed waits are needed.
+Fixed waits can be good when debugging, but during CI/CD execution, no static waits should be used
+as a static wait is not always necessary
+
+Integration with a CI/CD pipeline
+CI/CD tools such as Jenkins/GoCD can be implemented which will let the tests run
+at predefined times or whenever a feature branch is merged with develop providing some safety
+
+Tags in the Feature file
+Tags could be implemented, permitting the user to execute the positive test cases, or negative
+depending on their need.
+
+Source Code management
+Currently, the only branch available is main
+This is bad practice, as the code can easily be damaged
+Therefore, safety features should be added such as developers working on feature branches
+which merge into develop which is finally merged into main
+Adding this standard, with a CI/CD pipeline gives the team more safety regarding the code
+
